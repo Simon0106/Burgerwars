@@ -11,15 +11,11 @@ body {
 
 .banner-container {
     width: 100%;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.banner-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    height: 250px; /* Adjust this height to fit your banner preference */
+    background-image: url('banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .art-container {
@@ -33,9 +29,9 @@ body {
 }
 
 .art-container img {
-    max-width: 100%;
-    max-height: 60vh;
-    object-fit: contain;
+    max-width: 400px; /* Limits the size of Marcus */
+    width: 100%;      /* Ensures it stays responsive on mobile */
+    height: auto;
     display: block;
 }
 
