@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Burger Wars</title>
-</head>
-<body>
-    <div class="hero">
-        <h1>BURGER WARS</h1>
-        <h2>Grill For Freedom</h2>
+<!-- Replace the existing <div id="imageModal"> section with this: -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
+    
+    <div class="slideshow-container">
+        <!-- Add your images here -->
+        <div class="mySlides fade"><img src="marcus.jpg" style="width:100%"></div>
+        <div class="mySlides fade"><img src="marcus2.jpg" style="width:100%"></div> 
         
-        <!-- Marcus Image that triggers the overlay -->
-        <img src="marcus.jpg" alt="Marcus" class="character" onclick="document.getElementById('imageModal').style.display='block'">
-        
-        <form>
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">JOIN THE RESISTANCE</button>
-        </form>
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+</div>
 
-    <!-- Fullscreen Overlay Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
-        <img class="modal-content" src="marcus.jpg">
-    </div>
-</body>
-</html>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) { showSlides(slideIndex += n); }
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
