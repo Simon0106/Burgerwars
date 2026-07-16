@@ -1,28 +1,54 @@
-<!-- Replace the existing <div id="imageModal"> section with this: -->
-<div id="imageModal" class="modal">
-    <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
-    
-    <div class="slideshow-container">
-        <!-- Add your images here -->
-        <div class="mySlides fade"><img src="marcus.jpg" style="width:100%"></div>
-        <div class="mySlides fade"><img src="marcus2.jpg" style="width:100%"></div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Burger Wars</title>
+</head>
+<body>
+    <div class="hero">
+        <h1 class="main-title">BURGER WARS</h1>
+        <h2>Grill For Freedom</h2>
         
-        <!-- Navigation Arrows -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <img src="marcus.jpg" alt="Marcus" class="character" onclick="openModal()">
+        
+        <form id="signupForm" onsubmit="event.preventDefault(); document.getElementById('confirmation').style.display='block'; this.style.display='none';">
+            <p class="signup-text">Join the resistance for exclusive updates!</p>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">JOIN THE FIGHT</button>
+        </form>
+        <div id="confirmation" style="display:none; color:white; font-size: 2rem; margin-top: 20px;">Grill For Freedom!</div>
     </div>
-</div>
 
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-function plusSlides(n) { showSlides(slideIndex += n); }
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-  slides[slideIndex-1].style.display = "block";
-}
-</script>
+    <!-- Gallery Overlay -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="slideshow-container" onclick="event.stopPropagation()">
+            <div class="mySlides"><img src="marcus.jpg" style="width:100%"></div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Story By S.R. Moore</p>
+        <p>&copy; 2026 Burger Wars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        function openModal() { document.getElementById('imageModal').style.display='block'; }
+        function closeModal() { document.getElementById('imageModal').style.display='none'; }
+        window.onscroll = closeModal;
+        function plusSlides(n) { 
+            let slides = document.getElementsByClassName("mySlides");
+            slideIndex += n;
+            if (slideIndex > slides.length) slideIndex = 1;
+            if (slideIndex < 1) slideIndex = slides.length;
+            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slides[slideIndex-1].style.display = "block";
+        }
+        plusSlides(0); // Initialize
+    </script>
+</body>
+</html>
