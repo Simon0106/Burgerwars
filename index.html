@@ -9,11 +9,20 @@
     <div class="hero">
         <h1>BURGER WARS</h1>
         <h2>Grill For Freedom</h2>
-        <img src="marcus.jpg" alt="Marcus" class="character">
+        
+        <!-- Marcus Image that triggers the overlay -->
+        <img src="marcus.jpg" alt="Marcus" class="character" onclick="document.getElementById('imageModal').style.display='block'">
+        
         <form>
             <input type="email" placeholder="Enter your email" required>
             <button type="submit">JOIN THE RESISTANCE</button>
         </form>
+    </div>
+
+    <!-- Fullscreen Overlay Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
+        <img class="modal-content" src="marcus.jpg">
     </div>
 </body>
 </html>
