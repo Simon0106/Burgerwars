@@ -2,53 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Burger Wars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Project</title>
+    <style>
+        /* Base page styling to ensure full-height background */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #1a1a1a; /* Your background color */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Container for the artwork */
+        .art-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* Ensures the image fits the screen fully without cropping */
+        .art-container img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div class="hero">
-        <h1 class="main-title">BURGER WARS</h1>
-        <h2>Grill For Freedom</h2>
-        
-        <img src="marcus.jpg" alt="Marcus" class="character" onclick="openModal()">
-        
-        <form id="signupForm" onsubmit="event.preventDefault(); document.getElementById('confirmation').style.display='block'; this.style.display='none';">
-            <p class="signup-text">Join the resistance for exclusive updates!</p>
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">JOIN THE FIGHT</button>
-        </form>
-        <div id="confirmation" style="display:none; color:white; font-size: 2rem; margin-top: 20px;">Grill For Freedom!</div>
-    </div>
 
-    <!-- Gallery Overlay -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <div class="slideshow-container" onclick="event.stopPropagation()">
-            <div class="mySlides"><img src="marcus.jpg" style="width:100%"></div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
+    <div class="art-container">
+        <img src="path-to-your-image.jpg" alt="Novel Artwork">
     </div>
 
     <footer>
-        <p>Story By S.R. Moore</p>
-        <p>&copy; 2026 Burger Wars. All rights reserved.</p>
+        <p>&copy; 2026 [Author Name] & Marcos. All rights reserved.</p>
     </footer>
 
-    <script>
-        let slideIndex = 1;
-        function openModal() { document.getElementById('imageModal').style.display='block'; }
-        function closeModal() { document.getElementById('imageModal').style.display='none'; }
-        window.onscroll = closeModal;
-        function plusSlides(n) { 
-            let slides = document.getElementsByClassName("mySlides");
-            slideIndex += n;
-            if (slideIndex > slides.length) slideIndex = 1;
-            if (slideIndex < 1) slideIndex = slides.length;
-            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            slides[slideIndex-1].style.display = "block";
-        }
-        plusSlides(0); // Initialize
-    </script>
 </body>
 </html>
