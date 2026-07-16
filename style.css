@@ -1,22 +1,58 @@
-body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    font-family: sans-serif; 
+}
 
 .hero {
     background-image: url('banner.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* This aligns everything to the left */
+    align-items: flex-start; 
     justify-content: center;
-    text-align: center;
+    padding-left: 5%; /* Adds a little breathing room from the left edge */
 }
 
-h1 { color: white; font-size: 5rem; margin-bottom: 20px; text-shadow: 2px 2px 10px black; }
+h1 { 
+    color: white; 
+    font-size: 4rem; 
+    margin-bottom: 20px; 
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
+}
 
-.character { width: 300px; margin-bottom: 20px; }
+.character { 
+    width: 200px; 
+    margin-bottom: 30px; 
+    /* This adds a white border to the image */
+    border: 5px solid white; 
+    border-radius: 5px;
+}
 
-form { background: rgba(180, 0, 0, 0.9); padding: 30px; border-radius: 10px; }
+form { 
+    background: rgba(180, 0, 0, 0.95); 
+    padding: 20px; 
+    border-radius: 8px; 
+    display: flex;
+    gap: 10px;
+}
 
-input { padding: 12px; width: 250px; border: none; border-radius: 4px; }
-button { padding: 12px; cursor: pointer; background: white; border: none; font-weight: bold; }
+input { 
+    padding: 12px; 
+    width: 250px; 
+    border: none; 
+    border-radius: 4px; 
+}
+
+button { 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    background: white; 
+    border: none; 
+    font-weight: bold; 
+    border-radius: 4px;
+}
